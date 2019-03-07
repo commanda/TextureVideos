@@ -9,7 +9,7 @@
 import UIKit
 import AsyncDisplayKit
 
-func videoNode(url: String) -> ASVideoNode {
+func createVideoNode(url: String) -> ASVideoNode {
 
     let videoNode = ASVideoNode()
     videoNode.assetURL = URL(string: url)
@@ -29,14 +29,18 @@ class VideoCellNode: ASCellNode {
     }
 
     override func didLoad() {
-        self.addSubnode(videoNode(url: url))
+        self.addSubnode(createVideoNode(url: url))
+    }
+
+    override func layout() {
+        subnodes?.forEach { $0.frame = self.bounds }
     }
 }
 
 class VideoViewController: ASViewController<ASVideoNode> {
 
     init(url: String) {
-        let v = videoNode(url: url)
+        let v = createVideoNode(url: url)
         super.init(node: v)
     }
 
@@ -79,7 +83,7 @@ class ViewController: ASViewController<ASCollectionNode>, ASCollectionDelegate, 
         collectionNode.delegate = self
     }
 
-     // doesn't work, doesn't display the video, not sure why
+     // still choppy
     func collectionNode(_ collectionNode: ASCollectionNode, nodeBlockForItemAt indexPath: IndexPath) -> ASCellNodeBlock {
         guard (0..<urls.count).contains(indexPath.row) else { return { return ASCellNode() } }
 
