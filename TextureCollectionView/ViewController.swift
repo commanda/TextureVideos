@@ -27,10 +27,16 @@ class ViewController: ASViewController<ASCollectionNode>, ASCollectionDelegate, 
     let flowLayout: UICollectionViewFlowLayout
     let collectionNode: ASCollectionNode
 
-    let urls = ["hey"]
+    let urls = ["https://res.cloudinary.com/howtoinc/video/upload/s3/832A2BD4-9225-42E5-A9EE-131B7AD9B27C.mp4",
+                "https://res.cloudinary.com/howtoinc/video/upload/s3/8C0465B0-065F-4309-BC7C-90755A95CDEF.mp4",
+                "https://res.cloudinary.com/howtoinc/video/upload/s3/8F3D8EE6-01A7-4E23-B5F9-0633CE13C251.mp4",
+                "https://res.cloudinary.com/howtoinc/video/upload/s3/80239FB2-C9F8-49A8-861E-67EF0F17F5CB.mp4",
+                "https://res.cloudinary.com/howtoinc/video/upload/s3/3FE0A80E-3AE2-4E6F-A4EA-702B0C1337D7.mp4",
+                "https://res.cloudinary.com/howtoinc/video/upload/s3/2B11F82A-849A-47AC-970A-C892B6A8C1D3.mp4"]
 
     init() {
         flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
         collectionNode = ASCollectionNode(collectionViewLayout: flowLayout)
         collectionNode.backgroundColor = .green
         super.init(node: collectionNode)
