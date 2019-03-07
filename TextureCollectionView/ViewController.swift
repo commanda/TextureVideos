@@ -12,6 +12,7 @@ import AsyncDisplayKit
 class VideoViewController: ASViewController<ASVideoNode> {
 
     init(url: String) {
+        
         let videoNode = ASVideoNode()
         videoNode.assetURL = URL(string: url)
         videoNode.shouldAutoplay = true
@@ -59,6 +60,25 @@ class ViewController: ASViewController<ASCollectionNode>, ASCollectionDelegate, 
         collectionNode.delegate = self
     }
 
+    // still choppy
+    func collectionNode(_ collectionNode: ASCollectionNode, nodeBlockForItemAt indexPath: IndexPath) -> ASCellNodeBlock {
+        guard (0..<urls.count).contains(indexPath.row) else { return { return ASCellNode() } }
+
+        let url = urls[indexPath.row]
+        let size = collectionNode.bounds.size
+
+        return { () -> ASCellNode in
+            let node = ASCellNode(viewControllerBlock: { () -> UIViewController in
+                return VideoViewController(url: url)
+            }, didLoad: nil)
+
+            node.style.preferredSize = size
+            return node
+        }
+    }
+
+/*
+    // still choppy
     func collectionNode(_ collectionNode: ASCollectionNode, nodeForItemAt indexPath: IndexPath) -> ASCellNode {
         guard (0..<urls.count).contains(indexPath.row) else { return ASCellNode() }
 
@@ -73,6 +93,7 @@ class ViewController: ASViewController<ASCollectionNode>, ASCollectionDelegate, 
         node.style.preferredSize = collectionNode.bounds.size
         return node
     }
+ */
 
     func numberOfSections(in collectionNode: ASCollectionNode) -> Int {
         return 1
