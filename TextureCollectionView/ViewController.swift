@@ -13,6 +13,9 @@ class VideoViewController: ASViewController<ASVideoNode> {
 
     init(url: String) {
         let videoNode = ASVideoNode()
+        videoNode.assetURL = URL(string: url)
+        videoNode.shouldAutoplay = true
+        videoNode.shouldAutorepeat = true
         videoNode.backgroundColor = .blue
         super.init(node: videoNode)
     }
