@@ -9,16 +9,35 @@
 import UIKit
 import AsyncDisplayKit
 
+func videoNode(url: String) -> ASVideoNode {
+
+    let videoNode = ASVideoNode()
+    videoNode.assetURL = URL(string: url)
+    videoNode.shouldAutoplay = true
+    videoNode.shouldAutorepeat = true
+    videoNode.backgroundColor = .blue
+    return videoNode
+}
+
+class VideoCellNode: ASCellNode {
+
+    private let url: String
+
+    init(url: String) {
+        self.url = url
+        super.init()
+    }
+
+    override func didLoad() {
+        self.addSubnode(videoNode(url: url))
+    }
+}
+
 class VideoViewController: ASViewController<ASVideoNode> {
 
     init(url: String) {
-        
-        let videoNode = ASVideoNode()
-        videoNode.assetURL = URL(string: url)
-        videoNode.shouldAutoplay = true
-        videoNode.shouldAutorepeat = true
-        videoNode.backgroundColor = .blue
-        super.init(node: videoNode)
+        let v = videoNode(url: url)
+        super.init(node: v)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -60,6 +79,21 @@ class ViewController: ASViewController<ASCollectionNode>, ASCollectionDelegate, 
         collectionNode.delegate = self
     }
 
+     // doesn't work, doesn't display the video, not sure why
+    func collectionNode(_ collectionNode: ASCollectionNode, nodeBlockForItemAt indexPath: IndexPath) -> ASCellNodeBlock {
+        guard (0..<urls.count).contains(indexPath.row) else { return { return ASCellNode() } }
+
+        let url = urls[indexPath.row]
+        let size = collectionNode.bounds.size
+
+        return { () -> ASCellNode in
+            let cellNode = VideoCellNode(url: url)
+            cellNode.style.preferredSize = size
+            return cellNode
+        }
+    }
+
+    /*
     // still choppy
     func collectionNode(_ collectionNode: ASCollectionNode, nodeBlockForItemAt indexPath: IndexPath) -> ASCellNodeBlock {
         guard (0..<urls.count).contains(indexPath.row) else { return { return ASCellNode() } }
@@ -76,6 +110,7 @@ class ViewController: ASViewController<ASCollectionNode>, ASCollectionDelegate, 
             return node
         }
     }
+ */
 
 /*
     // still choppy
