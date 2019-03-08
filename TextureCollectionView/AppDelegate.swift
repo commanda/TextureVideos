@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .magenta
         window?.rootViewController = ViewController()
+//        window?.rootViewController = VideoFeedController() // also choppy
         window?.makeKeyAndVisible()
         return true
     }

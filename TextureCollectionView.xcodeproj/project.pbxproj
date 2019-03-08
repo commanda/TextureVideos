@@ -13,6 +13,7 @@
 		37734E1C22318022008639EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37734E1A22318022008639EF /* LaunchScreen.storyboard */; };
 		37734E2722318022008639EF /* TextureCollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37734E2622318022008639EF /* TextureCollectionViewTests.swift */; };
 		37734E3222318022008639EF /* TextureCollectionViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37734E3122318022008639EF /* TextureCollectionViewUITests.swift */; };
+		37EE0CF22231A9C400D0BD5A /* GeekTreeGist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EE0CF12231A9C400D0BD5A /* GeekTreeGist.swift */; };
 		5210123E0012CEE61504482D /* Pods_TextureCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6562F8EDF6381BF63AB678E /* Pods_TextureCollectionView.framework */; };
 		6E75EF94D4FD80C86D9377B0 /* Pods_TextureCollectionViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65BEE44E6A2487EC9CCB6A3 /* Pods_TextureCollectionViewTests.framework */; };
 		FA1D527AB7114BE027F968A7 /* Pods_TextureCollectionViewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F912D34434BE3A3222F44DCB /* Pods_TextureCollectionViewUITests.framework */; };
@@ -49,6 +50,7 @@
 		37734E2D22318022008639EF /* TextureCollectionViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextureCollectionViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37734E3122318022008639EF /* TextureCollectionViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureCollectionViewUITests.swift; sourceTree = "<group>"; };
 		37734E3322318022008639EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37EE0CF12231A9C400D0BD5A /* GeekTreeGist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeekTreeGist.swift; sourceTree = "<group>"; };
 		457E7346642C2CF5B3C3EC45 /* Pods-TextureCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextureCollectionView.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextureCollectionView/Pods-TextureCollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		687F390F72471287C73EC1DA /* Pods-TextureCollectionViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextureCollectionViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextureCollectionViewUITests/Pods-TextureCollectionViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BFF0EED6ADB84F47BE8A86E /* Pods-TextureCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextureCollectionView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextureCollectionView/Pods-TextureCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				37734E1122318020008639EF /* AppDelegate.swift */,
 				37734E1322318020008639EF /* ViewController.swift */,
+				37EE0CF12231A9C400D0BD5A /* GeekTreeGist.swift */,
 				37734E1822318022008639EF /* Assets.xcassets */,
 				37734E1A22318022008639EF /* LaunchScreen.storyboard */,
 				37734E1D22318022008639EF /* Info.plist */,
@@ -395,6 +398,7 @@
 			files = (
 				37734E1422318020008639EF /* ViewController.swift in Sources */,
 				37734E1222318020008639EF /* AppDelegate.swift in Sources */,
+				37EE0CF22231A9C400D0BD5A /* GeekTreeGist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

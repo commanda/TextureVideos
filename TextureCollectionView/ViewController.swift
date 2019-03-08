@@ -19,7 +19,7 @@ func createVideoNode(url: String) -> ASVideoNode {
     return videoNode
 }
 
-class VideoCellNode: ASCellNode {
+class AVideoCellNode: ASCellNode {
 
     private let url: String
 
@@ -91,7 +91,7 @@ class ViewController: ASViewController<ASCollectionNode>, ASCollectionDelegate, 
         let size = collectionNode.bounds.size
 
         return { () -> ASCellNode in
-            let cellNode = VideoCellNode(url: url)
+            let cellNode = AVideoCellNode(url: url)
             cellNode.style.preferredSize = size
             return cellNode
         }
